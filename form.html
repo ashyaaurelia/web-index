@@ -1,0 +1,198 @@
+<html>
+<head>
+    <title>Formulir Pendaftaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+            padding: 20px;
+        } 
+        form {
+            border: solid 1px rgb(32, 161, 208);
+            width: 600px;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 400px;
+        }
+        fieldset {
+            border: 2px solid rgb(42, 51, 229);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+            color: rgb(42, 51, 229);
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input[type=text],
+        .form-group select {
+            padding: 8px;
+            border: 1px solid #211ed2;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        input[type=radio] {
+            display: none;
+        }
+        input[type=radio] + label::before {
+            content: "";
+            margin-right: 8px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        input[type=radio]:checked + label::before {
+            content: "\2022";
+            color: white;
+            background-color: rgb(54, 54, 213);
+            font-size: 1.4em;
+            text-align: center;
+            line-height: 20px;
+            text-shadow: 0px 0px 3px red;
+        }
+        .nilai-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .nilai-group input {
+            flex: 1;
+            min-width: 0;   
+            padding: 8px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+        .checkbox-section {
+            margin: 15px 0;
+        }
+        .checkbox-section p {
+            margin: 0 0 5px 0;
+            font-weight: bold;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        input[type=checkbox] {
+            width: 20px;
+            height: 20px;
+            accent-color: mediumseagreen; 
+        }
+        .button-group {
+            display: flex;
+            gap: 20px;
+        }
+        input[type=submit],
+        input[type=reset] {
+            background: linear-gradient(to bottom, #0099ff, #004080);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover,
+        input[type=reset]:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="#">
+        <fieldset>
+            <legend>Formulir Pendaftaran</legend>
+
+            <div class="form-group">
+                <label>Nama</label>
+                <input type="text" name="nama" placeholder="Masukkan nama">
+            </div>
+
+            <div class="form-group">
+                <label>Asal Sekolah</label>
+                <input type="text" name="sekolah" placeholder="Asal sekolah">
+            </div>
+
+            <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <div class="radio-group">
+                    <input type="radio" id="rb1" name="rb" value="Laki Laki"> 
+                    <label for="rb1">Laki Laki</label>
+
+                    <input type="radio" id="rb2" name="rb" value="Wanita"> 
+                    <label for="rb2">Perempuan</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Agama</label>
+                <select>
+                    <option> --PILIH-- </option>
+                    <option>Islam</option>
+                    <option>Kristen</option>
+                    <option>Katholik</option>
+                    <option>Hindu</option>
+                    <option>Budha</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Nilai</label>
+                <div class="nilai-group">
+                    <input type="text" name="mtk" placeholder="Matematika">
+                    <input type="text" name="indo" placeholder="Bahasa Indonesia">
+                    <input type="text" name="inggris" placeholder="Bahasa Inggris">
+                </div>
+            </div>
+            
+            <div class="form-group"> 
+                <label>Fakultas Pilihan</label>
+                <select>
+                    <option> --PILIH-- </option>
+                    <option>Fakultas Ilmu Pendidikan</option>
+                    <option>Fakultas Pendidikan Bahasa dan Seni</option>
+                    <option>Fakultas Pendidikan Olahraga dan Kesehatan</option>
+                    <option>Fakultas Pendidikan Teknik dan Kejuruan</option>
+                    <option>Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam</option>
+                    <option>Fakultas Pendidikan Ilmu Pengetahuan Sosial</option>
+                    <option>Fakultas Pendidikan Ekonomi dan Bisnis</option>
+                </select>
+            </div>
+
+            <div class="checkbox-section">
+                <p>Anda menyetujui persyaratan yang berlaku</p>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="setuju" name="setuju">
+                    <label for="setuju">Setuju</label>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
